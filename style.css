@@ -67,6 +67,7 @@ ul {
 
 .gradient-text {
     background: linear-gradient(90deg, var(--red), var(--yellow));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -467,6 +468,29 @@ header.scrolled {
     transition: transform 0.3s ease;
 }
 .float-whatsapp:hover { transform: scale(1.1); }
+
+.mind-link {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: 0.3s;
+  animation: glow 2s infinite alternate;
+}
+
+.mind-link:hover {
+  color: #ff4d4d;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(255,0,0,0.4);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255,0,0,0.9);
+  }
+}
 
 /* --- Responsividade --- */
 @media (max-width: 1024px) {
