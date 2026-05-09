@@ -1,6 +1,6 @@
 // Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', () => {
-    const courseWhatsappNumber = '5581900000000';
+    const courseWhatsappNumber = '5581982325607';
 
     // --- 1. Loading Screen Animation (GSAP) ---
     window.addEventListener('load', () => {
