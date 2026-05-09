@@ -1,5 +1,6 @@
 // Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', () => {
+    const courseWhatsappNumber = '5581900000000';
 
     // --- 1. Loading Screen Animation (GSAP) ---
     window.addEventListener('load', () => {
@@ -98,5 +99,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- 6. Course Form WhatsApp Redirect ---
+    const courseForm = document.getElementById('course-form');
+
+    if (courseForm) {
+        courseForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(courseForm);
+            const nome = String(formData.get('nome') || '').trim();
+            const idade = String(formData.get('idade') || '').trim();
+            const experiencia = String(formData.get('experiencia') || '').trim();
+            const whatsapp = String(formData.get('whatsapp') || '').trim();
+            const cidade = String(formData.get('cidade') || '').trim();
+
+            const message = [
+                'Olá, quero me inscrever no curso do Especialista Silas CD.',
+                '',
+                `Nome completo: ${nome}`,
+                `Idade: ${idade}`,
+                `Nível de experiência: ${experiencia}`,
+                `Whatsapp: ${whatsapp}`,
+                `Cidade: ${cidade}`
+            ].join('\n');
+
+            const whatsappUrl = `https://wa.me/${courseWhatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+    }
 
 });
